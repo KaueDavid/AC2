@@ -1,0 +1,37 @@
+<h2>Empréstimos</h2>
+
+<div class="contadores">
+  <span>Total: <strong>{{ total }}</strong></span>
+  <span>Em aberto: <strong>{{ emAberto }}</strong></span>
+  <span>Devolvidos: <strong>{{ devolvidos }}</strong></span>
+</div>
+
+<div>
+  @for (emprestimo of emprestimos; track emprestimo.id) {
+    <div class="cartao">
+      <div class="info">
+        <h4>{{ emprestimo.tituloLivro }}</h4>
+        <small>
+          {{ emprestimo.nomePessoa }} — devolver até
+          {{ emprestimo.dataPrevistaDevolucao | date:'dd/MM/yyyy' }}
+        </small>
+      </div>
+
+      <span class="status"
+            [class.laranja]="!emprestimo.devolvido"
+            [class.rosa]="emprestimo.devolvido">
+        {{ status(emprestimo) }}
+      </span>
+
+      <button class="devolver"
+              [class.riscado]="emprestimo.devolvido"
+              (click)="registrarDevolucao(emprestimo.id)">
+        Registrar devolução
+      </button>
+
+      <button class="remover" (click)="remover(emprestimo.id)">Remover</button>
+    </div>
+  } @empty {
+    <p>Nenhum empréstimo cadastrado</p>
+  }
+</div>

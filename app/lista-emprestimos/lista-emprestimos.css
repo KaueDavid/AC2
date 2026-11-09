@@ -1,0 +1,19 @@
+.contadores { display: flex; gap: 16px; margin-bottom: 16px; }
+
+.cartao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+.info { flex: 1; }
+.info h4 { margin: 0; }
+
+.status { padding: 4px 10px; border-radius: 12px; font-weight: bold; color: #fff; }
+.laranja { background: orange; }
+.verde { background: rgb(28, 241, 0); }
+
+.riscado { opacity: 0.6; }

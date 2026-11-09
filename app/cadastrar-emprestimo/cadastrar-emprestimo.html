@@ -1,0 +1,17 @@
+<h2>Novo empréstimo</h2>
+
+<div class="formulario">
+  <label>Nome da pessoa
+    <input type="text" [(ngModel)]="nomePessoa" placeholder="Ex: Maria" />
+  </label>
+
+  <label>Título do livro
+    <input type="text" [(ngModel)]="tituloLivro" placeholder="Ex: Dom Casmurro" />
+  </label>
+
+  <label>Data prevista de devolução
+    <input type="date" [(ngModel)]="dataPrevistaDevolucao" />
+  </label>
+
+  <button (click)="salvar()">Cadastrar</button>
+</div>
